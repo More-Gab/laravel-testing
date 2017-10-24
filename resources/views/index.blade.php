@@ -1,5 +1,9 @@
 @extends('layout')
 
+@section('css')
+    <link rel="stylesheet" href="css/style.css">
+@stop
+
 @section('title')
     <title>Oceanography</title>
 @stop

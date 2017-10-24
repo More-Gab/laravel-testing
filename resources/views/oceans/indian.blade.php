@@ -1,5 +1,7 @@
 @extends('layout')
-
+@section('css')
+    <link rel="stylesheet" href="../css/style.css">
+@stop
 @section('title')
     <title>Indian Ocean</title>
 @stop
@@ -7,7 +9,7 @@
 @section('section_header')
     <h1>Indian Ocean</h1>
     {{$name}}
-    <img src="/img/Indian_Ocean-CIA_WFB_Map.png">
+    <img src="../img/Indian_Ocean-CIA_WFB_Map.png">
 @stop
 
 @section('section_description')

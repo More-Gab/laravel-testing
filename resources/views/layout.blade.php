@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @yield('title')
 
-    <link rel="stylesheet" href="/css/style.css">
+    @yield('css')
 </head>
 <body>
 

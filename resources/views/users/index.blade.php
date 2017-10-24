@@ -1,5 +1,13 @@
 @extends('layout')
 
+@section('css')
+    <link rel="stylesheet" href="css/style.css">
+@stop
+
+@section('title')
+    <title>Users</title>
+@stop
+
 @section('section_header')
     <h1>Users</h1>
 @stop

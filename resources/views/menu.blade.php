@@ -3,6 +3,7 @@
         <h2>We know the following oceans:</h2>
         <a href="{{action('IndexController@index')}}">Homepage</a>
         <a href="{{action('UserController@index')}}">Users</a>
+        <a href="{{url('movies')}}">Movies</a>
         <br>
         <ul>
             <li><a href="{{action('OceanController@show', ['arctic'])}}">Arctic Ocean</a></li>
