@@ -13,13 +13,13 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <ul class="navbar-nav mx-auto">
-            <li class="nav-item"><a class="nav-link" href="{{url('movies')}}">Homepage</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{action('movieController@listing')}}">List</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{route('movies detail', ['id' => 1])}}">Detail</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{action('movieController@create')}}">New</a></li>
+            <li class="nav-item"><a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/movies'){echo 'active';} ;?>" href="{{url('movies')}}">Homepage</a></li>
+            <li class="nav-item"><a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/movies/list'){echo 'active';} ;?>" href="{{url('movies/list')}}">List</a></li>
+            <li class="nav-item"><a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/movies/new'){echo 'active';} ;?>" href="{{url('movies/new')}}">New</a></li>
+            <li class="nav-item"><a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/roles/new'){echo 'active';} ;?>" href="{{url('roles/new')}}">Roles</a></li>
         </ul>
     </nav>
-
+    
     @if(Session::has('success_message'))
         <div class="alert alert-success">
             {{ session()->get('success_message')}}

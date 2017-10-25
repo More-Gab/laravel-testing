@@ -23,5 +23,17 @@ Route::get('/movies/movie/{id}', 'movieController@detail')->name('movies detail'
 Route::get('/movies/movie/test_insert', 'movieController@test_insert');
 Route::get('/movies/new', 'movieController@create');
 Route::post('/movies/new', 'movieController@store');
+Route::get('/movies/edit/{id}', 'movieController@edit');
+Route::post('/movies/edit/{id}', 'movieController@store');
 // it can be done also with any
 //Route::any('/movies/create', 'movieController@create');
+
+
+// exercise of 8weeks wednesday morning
+Route::get('roles/new', 'roleController@create');
+Route::post('roles/new', 'roleController@store');
+Route::get('roles/edit/{id}', 'roleController@edit');
+Route::post('roles/edit/{id}', 'roleController@store');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

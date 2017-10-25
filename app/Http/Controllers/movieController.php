@@ -24,13 +24,26 @@ class movieController extends Controller
     }
 
     public function create() {
-        $view = view('movies/new');
+        $view = view('movies/edit');
+        $view->movie= new \App\Movie();
+        return $view;
+    }
+
+    public function edit($id) {
+        $movie = \App\Movie::findOrFail($id);
+        $view = view('movies/edit') ;
+        $view->movie=$movie;
         return $view;
     }
 
     public function store($id=null) {
-        // create movie object
-        $movie = new \App\Movie();
+        if($id){   //this is edit
+            // select movie from database
+            $movie = \App\Movie::findOrFail($id);
+        } else {   //if this is create
+            // create movie object
+            $movie = new \App\Movie();
+        }
         // fill it into the object but only the selected data in array
         $movie->fill(request()->only([
             'title',
@@ -43,7 +56,7 @@ class movieController extends Controller
         session()->flash('success_message', 'The movie was successfully saved!');
                 
         // redirect
-        return redirect()->action('movieController@listing');
+        return redirect()->action('movieController@edit', ['id'=>$movie->id]);
     }
 
     //public function store_old($id=null) {

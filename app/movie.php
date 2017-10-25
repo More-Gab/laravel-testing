@@ -16,7 +16,11 @@ class movie extends Model
 
     // this guarded property is like a black list
     // unable to fill
-    protected $guarded = [
-        'id'
-    ];
+    // protected $guarded = [
+    //     'id'
+    // ];
+    public function movie_roles()
+    {
+        return $this->hasMany('App\MovieRole');
+    }
 }
